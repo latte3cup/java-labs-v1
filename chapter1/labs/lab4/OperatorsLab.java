@@ -9,27 +9,58 @@ public class OperatorsLab {
     public static void main(String[] args) {
         // TODO: 1. 산술 연산자 사용하기
         // 두 개의 정수형 변수를 선언하고 덧셈, 뺄셈, 곱셈, 나눗셈, 나머지 연산을 수행하세요.
-        
-        
+        byte a = 127;
+        byte b = 122;
+        System.out.println(a + b);
+        System.out.println(a - b);
+        System.out.println(a * b);
+        System.out.println(a / b);
+        System.out.println(a % b);
+        System.out.println();
+
         // TODO: 2. 증감 연산자 사용하기
         // 변수를 선언하고 전위 증가, 후위 증가, 전위 감소, 후위 감소 연산을 수행하세요.
         // 각 단계별로 변수의 값을 출력하여 변화를 확인하세요.
-        
-        
+        System.out.println(a--);
+        System.out.println(--a);
+        System.out.println(a++);
+        System.out.println(++a);
+        System.out.println();
+
         // TODO: 3. 비교 연산자 사용하기
         // 두 변수를 비교하여 결과를 출력하세요 (==, !=, >, <, >=, <=).
-        
-        
+        System.out.println(a==b);
+        System.out.println(a!=b);
+        System.out.println(a>b);
+        System.out.println(a<b);
+        System.out.println(a>=b);
+        System.out.println(a<=b);
+        System.out.println();
         // TODO: 4. 논리 연산자 사용하기
         // boolean 변수를 사용하여 AND(&&), OR(||), NOT(!) 연산을 수행하세요.
-        
+        boolean t = true;
+        boolean f = false;
+
+        System.out.println(t && f);
+        System.out.println(t || f);
+        System.out.println(!t);
+        System.out.println(!f);
+        System.out.println();
         
         // TODO: 5. 대입 연산자 사용하기
         // 변수를 선언하고 복합 대입 연산자(+=, -=, *=, /=, %=)를 사용하여 값을 변경하세요.
-        
+        int c=0;
+        System.out.println(c+=3);
+        System.out.println(c-=2);
+        System.out.println(c*=5);
+        System.out.println(c/=2);
+        System.out.println(c%=9);
+
+        System.out.println(c);
+        System.out.println();
         
         // TODO: 6. 삼항 연산자 사용하기
-        // 조건에 따라 다른 값을 할당하는 예제를 작성하세요.
-        
+        int d = a+1 < b ? a : b;
+        System.out.println(d);
     }
 } 
