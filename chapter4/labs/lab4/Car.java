@@ -8,7 +8,10 @@ package chapter4.labs.lab4;
 public class Car {
     // TODO: 적절한 접근 제한자를 사용하여 필드를 정의하세요.
     // (모델명, 색상, 속도, Engine 타입의 필드 등)
-    
+    private String modelName;
+    private String color;
+    private int maximumSpeed;
+    private Engine engine;
     
     
     // TODO: 생성자를 정의하세요.

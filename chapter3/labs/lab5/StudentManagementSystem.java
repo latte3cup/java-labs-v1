@@ -200,7 +200,6 @@ public class StudentManagementSystem {
             if (names[i].equals(name)) {
                 return i;
             }
-
         }
         return -1;
     }
