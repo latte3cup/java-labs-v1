@@ -5,44 +5,96 @@ package chapter4.labs.lab4;
  * 
  * Car 클래스 정의하기 (Engine을 포함하는 관계)
  */
-public class Car {
+public class Car{
     // TODO: 적절한 접근 제한자를 사용하여 필드를 정의하세요.
     // (모델명, 색상, 속도, Engine 타입의 필드 등)
     private String modelName;
     private String color;
     private int maximumSpeed;
     private Engine engine;
-    
-    
+
+
+
     // TODO: 생성자를 정의하세요.
     // (Engine 객체를 생성하여 포함관계 구현)
-    
-    
-    
+
+
+    public Car(String type, String power, String modelName, String color, int maximumSpeed) {
+        this.engine = new Engine(type, power);
+        this.modelName = modelName;
+        this.color = color;
+        this.maximumSpeed = maximumSpeed;
+    }
+
     // TODO: 자동차를 시동하는 메소드를 정의하세요.
     // (내부적으로 Engine 객체의 메소드 호출)
+    public void startCar(){
+        System.out.println("시동 걸림");
+    }
     
     
     
     // TODO: 자동차를 정지하는 메소드를 정의하세요.
     // (내부적으로 Engine 객체의 메소드 호출)
-    
+    public void stopCar(){
+        System.out.println("시동 끔");
+    }
     
     
     // TODO: 자동차의 속도를 증가시키는 메소드를 정의하세요.
-    
+    public void speedUp(){
+        System.out.println("속도 증가");
+    }
     
     
     // TODO: 자동차의 속도를 감소시키는 메소드를 정의하세요.
-    
+    public void speedDown(){
+        System.out.println("속도 감소");
+    }
     
     
     // TODO: 자동차의 정보를 출력하는 메소드를 정의하세요.
     // (내부적으로 Engine 객체의 정보도 출력)
-    
+    public void getCarInfo(){
+        getEngine().getEngineInfo();
+        System.out.println("모델 :" + modelName);
+        System.out.println("색깔 : " + color);
+        System.out.println("최대 속도 : " + maximumSpeed);
+    }
     
     
     // TODO: 필요한 getter/setter 메소드를 정의하세요.
-    
-    
-} 
+
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getMaximumSpeed() {
+        return maximumSpeed;
+    }
+
+    public void setMaximumSpeed(int maximumSpeed) {
+        this.maximumSpeed = maximumSpeed;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+}
