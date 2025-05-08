@@ -13,9 +13,24 @@ public class BasicExceptionLab {
         System.out.println("Lab 1: 기본 예외처리 실습");
         
         // TODO: Scanner 객체를 생성하세요.
-        
+        Scanner sc = new Scanner(System.in);
         
         // TODO: try-catch-finally 구문을 작성하세요.
+        try {
+            System.out.println("첫번째 숫자를 입력해 주세요");
+            int a = sc.nextInt();
+            System.out.println("두번째 숫자를 입력해 주세요");
+            int b = sc.nextInt();
+        }catch (ArithmeticException e) {
+            System.out.println("0으로 나눌 수 없습니다.");
+        }catch (NumberFormatException e) {
+            System.out.println("숫자를 입력해야 합니다.");
+        }catch (Exception e) {
+            System.out.println("에러 발생");
+        }finally {
+            System.out.println("프로그램 종료");
+            sc.close();
+        }
         // 1. 사용자로부터 두 개의 숫자를 입력받습니다.
         // 2. 첫 번째 숫자를 두 번째 숫자로 나눈 결과를 출력합니다.
         // 3. 다음 예외 상황을 처리하세요:

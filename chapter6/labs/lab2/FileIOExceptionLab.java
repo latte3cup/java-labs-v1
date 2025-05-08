@@ -1,8 +1,6 @@
 package chapter6.labs.lab2;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -18,9 +16,36 @@ public class FileIOExceptionLab {
         Scanner scanner = new Scanner(System.in);
         
         // TODO: 사용자로부터 읽을 파일 이름을 입력받으세요.
-        
-        
+        System.out.println("읽을 파일 이름을 입력해주세요");
+        //String filename = scanner.nextLine();
+        String filename = "C:\\Users\\user\\Desktop\\repos\\java-labs-v1\\chapter6\\labs\\lab2\\sample.txt";
+
         // TODO: try-with-resources 구문을 사용하여 파일을 읽고 내용을 분석하세요.
+        int totalLines = 0;
+        int totalWords = 0;
+        int totalChars = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                totalLines++;
+                totalChars += line.length();
+                String[] words = line.split("\\s+");
+                totalWords += words.length;
+                System.out.println((totalLines) + ": " + line + " (글자 수: " + line.length() + ", 단어 수: " + words.length + ")");
+            }
+            System.out.println("\n파일 분석 결과:");
+            System.out.println("총 줄 수: " + totalLines);
+            System.out.println("총 단어 수: " + totalWords);
+            System.out.println("총 글자 수: " + totalChars);
+
+        } catch (FileNotFoundException e) {
+            System.err.println("오류: 파일을 찾을 수 없습니다." );
+        } catch (IOException e) {
+            System.err.println("오류: 파일을 읽는 동안 오류가 발생했습니다."  + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("예상치 못한 오류가 발생했습니다. : " + e.getMessage());
+        }
         // 1. BufferedReader를 사용하여 파일을 한 줄씩 읽습니다.
         // 2. 각 줄의 길이와 단어 수를 계산합니다.
         // 3. 파일의 전체 줄 수, 단어 수, 문자 수를 출력합니다.

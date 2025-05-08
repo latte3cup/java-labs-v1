@@ -22,6 +22,7 @@ public class InvalidAccountException extends Exception {
      * 유효하지 않은 계좌번호 반환
      * @return 유효하지 않은 계좌번호
      */
+
     public String getAccountNumber() {
         return accountNumber;
     }

@@ -20,7 +20,10 @@ public class InsufficientBalanceException extends Exception {
         this.requestedAmount = requestedAmount;
         this.availableBalance = availableBalance;
     }
-    
+
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
     /**
      * 요청된 금액 반환
      * @return 요청된 금액

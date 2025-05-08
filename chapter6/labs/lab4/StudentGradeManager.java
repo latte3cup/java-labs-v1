@@ -31,7 +31,11 @@ public class StudentGradeManager {
     public void addStudent(int id, String name, int[] scores) {
         // TODO: 디버깅 - 다음 코드에 버그가 있습니다.
         // 동일한 ID를 가진 학생이 이미 있는지 확인하지 않고 있습니다.
-        
+        for (Student s : students) {
+            if (s.getId() == id) {
+                throw new IllegalArgumentException("Student with id " + id + " already exists");
+            }
+        }
         Student student = new Student(id, name, scores);
         students.add(student);
         System.out.println("학생을 추가했습니다: " + student);
@@ -77,7 +81,7 @@ public class StudentGradeManager {
                 }
                 
                 // 평균 계산
-                return sum / scores.length;
+                return (double) sum / scores.length;
             }
         }
         

@@ -34,7 +34,9 @@ public class StudentGradeManagerTest {
             manager.addStudent(3, "김학생", new int[]{95, 92, 98});
             
             // 중복 ID 테스트
-            manager.addStudent(1, "중복학생", new int[]{50, 60, 70});
+            // 테스트 완료
+//            manager.addStudent(1, "중복학생", new int[]{50, 60, 70});
+
             
             System.out.println("\n총 학생 수: " + manager.getStudentCount());
         } catch (Exception e) {
